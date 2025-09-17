@@ -90,7 +90,7 @@ body{
 .btn{display:inline-block;padding:.6rem .9rem;border-radius:10px;text-decoration:none;font-weight:600;transition:background .2s,box-shadow .2s,transform .18s}
 .btn-primary{color:#04202b;background:linear-gradient(90deg,var(--accent-1),var(--accent-2));box-shadow:0 8px 30px rgba(108,92,231,0.12)}
 .btn-secondary{color:#fff;background:transparent;border:2px solid rgba(255,255,255,0.06)}
-.btn-ghost{color:var(--muted);background:transparent;border:1px solid rgba(255,255,255,0.04)}
+.btn-ghost{color:#18374c;background:#6e8698;border:1px solid rgba(255,255,255,0.04)}
 .btn:hover{transform:translateY(-3px)}
 .btn-primary:hover{box-shadow:0 20px 60px rgba(108,92,231,0.18)}
 .btn-secondary:hover{background:linear-gradient(90deg, rgba(108,92,231,0.12), rgba(0,180,216,0.06))}

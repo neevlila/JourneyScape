@@ -1,5 +1,3 @@
-/* Full refreshed stylesheet — copy entire file to replace existing styles.css */
-
 :root{
   --bg:#071026;
   --card-bg: rgba(255,255,255,0.02);
@@ -12,10 +10,9 @@
   --max-width:1150px;
   --container-pad:1rem;
   --gap:1rem;
-  --hero-bg: url('../assets/hero-bg.jpg'); /* optional background image; keep or remove */
+  --hero-bg: url('../assets/hero-bg.jpg');
 }
 
-/* base */
 *{box-sizing:border-box}
 html,body{height:100%}
 body{
@@ -27,10 +24,8 @@ body{
   line-height:1.45;
 }
 
-/* container */
 .container{max-width:var(--max-width);margin:0 auto;padding:0 var(--container-pad)}
 
-/* header / nav */
 .site-header{
   position:sticky;top:0;z-index:60;
   backdrop-filter: blur(6px);
@@ -42,7 +37,6 @@ body{
 .logo{height:38px;width:auto}
 .brand-name{font-weight:700;letter-spacing:.4px;color:#f5fbff}
 
-/* nav */
 .nav-toggle{position:absolute;left:-9999px;opacity:0}
 .nav-toggle-label{display:none;cursor:pointer;padding:.6rem;border-radius:8px}
 .nav-toggle-label .hamburger{display:block;width:26px;height:3px;background:var(--muted);position:relative;border-radius:3px;box-shadow:0 7px 0 var(--muted),0 -7px 0 var(--muted)}
@@ -51,11 +45,9 @@ body{
 .site-nav a:hover{color:#fff}
 .site-nav a::after{content:"";position:absolute;left:12px;right:12px;bottom:6px;height:2px;background:linear-gradient(90deg,var(--accent-1),var(--accent-2));transform:scaleX(0);transform-origin:left center;transition:transform .28s cubic-bezier(.2,.9,.2,1)}
 .site-nav a:hover::after{transform:scaleX(1)}
-/* active link */
 .site-nav a[aria-current="page"]{color:#fff}
 .site-nav a[aria-current="page"]::after{transform:scaleX(1)}
 
-/* hero - parallax via background-attachment */
 .hero{
   min-height:50vh;
   height:66vh;
@@ -67,12 +59,11 @@ body{
   background: linear-gradient(180deg, rgba(7,12,22,0.2), rgba(7,12,22,0.5)), var(--hero-bg);
   background-size:cover;
   background-position:center;
-  background-attachment: fixed; /* parallax effect */
+  background-attachment: fixed;
   border-bottom-left-radius:22px;
   border-bottom-right-radius:22px;
 }
 
-/* overlay content */
 .hero-overlay{width:100%;padding:3.5rem 0;}
 .hero-content{max-width:900px;margin:0 auto;text-align:center;padding:1.5rem;border-radius:12px}
 .hero-img{display:block;margin:0 auto 0.5rem;filter:drop-shadow(0 8px 30px rgba(0,0,0,0.45))}
@@ -80,18 +71,15 @@ body{
 .hero-sub{margin:.6rem 0 1rem;color:var(--muted);font-size:clamp(.95rem,1.6vw,1.05rem)}
 .hero-ctas{display:flex;gap:.6rem;justify-content:center;flex-wrap:wrap}
 
-/* intro */
 .intro{padding:1.25rem 0;text-align:center}
 .intro .lead{max-width:900px;margin:0 auto;color:var(--muted)}
 
-/* promise features */
 .promise-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:.8rem}
 .promise{background:var(--card-bg);padding:1rem;border-radius:12px;border:1px solid rgba(255,255,255,0.03);text-align:center}
 .promise .icon{font-size:1.8rem;margin-bottom:.5rem}
 .promise h3{margin:.3rem 0 .5rem}
 .promise p{color:var(--muted);font-size:.95rem;margin:0}
 
-/* featured destinations grid */
 .dest-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1rem}
 .dest-card{background:var(--card-bg);border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,0.03);display:flex;flex-direction:column;transition:transform .22s ease,box-shadow .22s}
 .dest-card:hover{transform:translateY(-8px);box-shadow:0 18px 50px rgba(0,0,0,0.6)}
@@ -107,93 +95,29 @@ body{
 .btn-primary:hover{box-shadow:0 20px 60px rgba(108,92,231,0.18)}
 .btn-secondary:hover{background:linear-gradient(90deg, rgba(108,92,231,0.12), rgba(0,180,216,0.06))}
 
-/* section headings */
 .section-title{font-size:1.15rem;margin:0 0 .4rem;color:#eaf3ff;font-weight:600}
 .section-lead{color:var(--muted);margin:0 0 0.8rem}
 
-/* stats */
 .stats-list{display:flex;gap:2rem;list-style:none;padding:1rem;margin:1rem 0;border-radius:12px;background:linear-gradient(90deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005));border:1px solid rgba(255,255,255,0.02);justify-content:center;flex-wrap:wrap}
 .stats-list li{text-align:center;min-width:96px}
 .stats-list strong{display:block;font-size:1.4rem;color:#fff}
 .stats-list span{display:block;color:var(--muted)}
 
-/* newsletter */
 .newsletter-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1rem;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005));border:1px solid rgba(255,255,255,0.02)}
 .newsletter-form{display:flex;gap:.6rem;align-items:center}
 .newsletter-form input[type="email"]{padding:.6rem .8rem;border-radius:10px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:inherit;min-width:220px}
 
-/* footer */
 .site-footer{padding:1.2rem 0;color:var(--muted);border-top:1px solid rgba(255,255,255,0.02);margin-top:2rem}
 .footer-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
 .footer-links{display:flex;gap:1rem;list-style:none;padding:0;margin:0}
 .footer-links a{color:var(--muted);text-decoration:none;transition:color .18s}
 .footer-links a:hover{color:#fff;}
 
-/* reveal animations (fade-in) */
 @keyframes fadeInUp {
   from{opacity:0;transform:translateY(14px)}
   to{opacity:1;transform:translateY(0)}
 }
 .reveal{animation:fadeInUp .8s cubic-bezier(.2,.9,.2,1) both}
-
-/* Hero backgrounds & overlays */
-.hero,
-.about-hero{
-  color: #fff;
-  position: relative;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  padding: clamp(48px, 10vh, 140px) 1rem;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-
-.privacy-card{
-      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-      border-radius:16px;
-      padding:1.25rem;
-      box-shadow: 0 18px 50px rgba(2,6,23,0.6);
-      border:1px solid rgba(255,255,255,0.04);
-      overflow:hidden;
-    }
-
-    .privacy-header{display:flex;align-items:center;gap:1rem;margin-bottom:1rem}
-    .privacy-header .icon{
-      width:64px;height:64px;border-radius:12px;
-      display:flex;align-items:center;justify-content:center;font-size:1.6rem;
-      background: linear-gradient(90deg, var(--accent-1), var(--accent-2));
-      color:#04202b;
-      box-shadow: 0 8px 30px rgba(108,92,231,0.12);
-      flex:0 0 64px;
-    }
-    .privacy-header h1{margin:0;font-size:1.25rem;color:#fff}
-    .privacy-header p{margin:0;color:var(--muted);font-size:.95rem}
-
-    .policy-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:1rem}
-    .policy-card{
-      background: rgba(255,255,255,0.015);
-      padding:1rem;border-radius:12px;border:1px solid rgba(255,255,255,0.02);
-      transition:transform .18s ease, box-shadow .18s ease;
-    }
-    .policy-card:hover{transform:translateY(-6px);box-shadow:0 20px 60px rgba(0,0,0,0.5)}
-    .policy-card h3{margin:.2rem 0 .5rem;color:#eaf3ff}
-    .policy-card p{margin:0;color:var(--muted);font-size:.95rem;line-height:1.45}
-
-    .privacy-contact{
-      margin-top:1rem;padding-top:1rem;border-top:1px dashed rgba(255,255,255,0.03);
-      display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.6rem;
-    }
-    .privacy-contact .contact-left{color:var(--muted);font-size:.95rem}
-    .privacy-contact .contact-left a{color:var(--accent-1);text-decoration:none}
-    .last-updated{font-size:.9rem;color:var(--muted);margin-top:.6rem}
-
-    @media (max-width:900px){
-      .policy-grid{grid-template-columns:1fr}
-      .privacy-header{gap:.75rem}
-      .privacy-header .icon{width:56px;height:56px;flex:0 0 56px}
-    }
 
 .hero{
   background:
@@ -201,18 +125,9 @@ body{
     url("../assets/hero.jpg") center/cover no-repeat;
 }
 
-/* about page hero image */
-.about-hero{
-  background:
-    linear-gradient(180deg, rgba(6,10,18,0.64), rgba(6,10,18,0.44)),
-    url("../assets/about-hero.jpg") center/cover no-repeat;
-}
-
-/* stronger contrast for hero text & buttons */
 .hero-title{color:#fff; text-shadow:0 8px 30px rgba(0,0,0,0.6)}
 .hero-sub{color:var(--muted)}
 
-/* responsive adjustments: avoid fixed background on small screens */
 @media (max-width:780px){
   .hero, .about-hero{
     background-attachment: scroll;
@@ -222,12 +137,10 @@ body{
   .hero-img{height:96px}
 }
 
-/* respects reduced motion */
 @media (prefers-reduced-motion: reduce){
   .hero, .about-hero{background-attachment: scroll}
 }
 
-/* responsive rules */
 @media (max-width:1100px){
   .dest-grid{grid-template-columns:repeat(2,1fr)}
   .promise-grid{grid-template-columns:repeat(2,1fr)}
@@ -259,19 +172,14 @@ body{
   .logo{height:32px}
 }
 
-/* accessibility preferences */
 @media (prefers-reduced-motion: reduce){
   *{transition:none !important}
   .reveal{animation:none !important}
   .hero{background-attachment:scroll}
 }
 
-/* small polish */
 :focus{outline:2px solid rgba(108,92,231,0.18);outline-offset:2px}
 
-/* About page: hero background, cards, layout & animations */
-
-/* About hero with large travel image + dark overlay */
 .about-hero {
   background:
     linear-gradient(180deg, rgba(3,7,14,0.62), rgba(3,7,14,0.42)),
@@ -285,12 +193,10 @@ body{
   border-bottom-right-radius: 18px;
 }
 
-/* ensure good legibility on small screens */
 @media (max-width: 780px) {
   .about-hero { background-attachment: scroll; padding: 40px 0.75rem; min-height: 44vh; }
 }
 
-/* hero inner box */
 .about-hero .hero-content{
   max-width: 1100px;
   margin: 0 auto;
@@ -301,14 +207,11 @@ body{
   box-shadow: 0 18px 50px rgba(2,6,23,0.6);
 }
 
-/* hero headings */
 .about-hero .hero-title { font-size: clamp(1.8rem, 4.4vw, 3.2rem); margin: 0 0 .6rem; color: #fff; text-shadow: 0 8px 30px rgba(0,0,0,0.6); }
 .about-hero .hero-sub { margin: 0; color: var(--muted); font-size: clamp(.95rem, 1.6vw, 1.1rem); }
 
-/* content layout */
 .about-content .lead { max-width: 900px; margin: 0 auto 1rem; color: var(--muted); text-align:center; }
 
-/* Three-card grid for Mission/Vision/Why */
 .promise-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -322,7 +225,6 @@ body{
   .promise-grid { grid-template-columns: 1fr; }
 }
 
-/* about cards */
 .about-card {
   background: var(--card-bg, rgba(255,255,255,0.02));
   border-radius: 12px;
@@ -335,11 +237,9 @@ body{
 .about-card h2 { margin: .25rem 0 .6rem; font-size: 1.05rem; color: #eaf3ff; }
 .about-card p { margin: 0; color: var(--muted); line-height: 1.45; }
 
-/* Buttons & links hover (allowed) */
 .btn { transition: transform .16s ease, box-shadow .16s ease; }
 .btn:hover, .footer-links a:hover { transform: translateY(-4px); text-decoration: none; }
 
-/* Simple fade-in reveal animation used by .reveal */
 .reveal { opacity: 0; transform: translateY(8px); animation: fadeInUp .6s ease forwards; animation-delay: .12s; }
 .reveal:nth-child(2){ animation-delay: .18s; }
 .reveal:nth-child(3){ animation-delay: .24s; }
@@ -347,21 +247,18 @@ body{
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Remove hero background when .no-bg is present (used on destinations page) */
 .hero.no-bg,
 .hero.no-bg .hero-overlay {
   background: none !important;
   background-image: none !important;
   background-color: transparent !important;
 }
-/* If hero uses background-size/position from other rules, ensure it doesn't show */
 .hero.no-bg::before,
 .hero.no-bg::after {
   background: none !important;
   display: none !important;
 }
-/* Optionally adjust text contrast when no background is present */
 .hero.no-bg .hero-title,
 .hero.no-bg .hero-sub {
-  color: inherit; /* use page default text color */
+  color: inherit;
 }

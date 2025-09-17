@@ -1,3 +1,4 @@
+// ...existing code...
 <!doctype html>
 <html lang="en">
 <head>
@@ -44,59 +45,62 @@
     </section>
 
     <section class="container reveal" aria-label="Privacy summary" style="padding:1.25rem 0;">
-      <div class="privacy-card" role="region" aria-labelledby="privacy-title">
-        <header class="privacy-header">
-          <div class="icon" aria-hidden="true">🔒</div>
+      <!-- main card uses existing .about-card styles to render as a box -->
+      <div class="privacy-card about-card" role="region" aria-labelledby="privacy-title">
+        <header class="privacy-header" style="display:flex;gap:1rem;align-items:center;margin-bottom:1rem">
+          <div class="icon" aria-hidden="true" style="font-size:1.6rem">🔒</div>
           <div>
-            <h1 id="privacy-title">Your privacy matters</h1>
-            <p>Clear, simple explanations of what we collect, why and how we protect it.</p>
+            <h1 id="privacy-title" style="margin:.1rem 0">Your privacy matters</h1>
+            <p style="margin:0;color:var(--muted)">Clear, simple explanations of what we collect, why and how we protect it.</p>
           </div>
         </header>
 
-        <div class="policy-grid" role="list">
-          <article class="policy-card" role="listitem" aria-labelledby="overview">
+        <!-- grid of boxed policy items (reuses .promise-grid for layout) -->
+        <div class="policy-grid promise-grid" role="list" style="margin-top:.6rem">
+          <article class="policy-card about-card" role="listitem" aria-labelledby="overview">
             <h3 id="overview">Overview</h3>
             <p>JourneyScape is committed to protecting your privacy. We collect only the information necessary to provide services, communicate with you and improve our offerings.</p>
           </article>
 
-          <article class="policy-card" role="listitem" aria-labelledby="info-collect">
+          <article class="policy-card about-card" role="listitem" aria-labelledby="info-collect">
             <h3 id="info-collect">Information We Collect</h3>
             <p>We may collect contact details, booking preferences, payment metadata (handled via secure providers) and usage data (pages visited, form interactions). We do not store full payment card numbers.</p>
           </article>
 
-          <article class="policy-card" role="listitem" aria-labelledby="use">
+          <article class="policy-card about-card" role="listitem" aria-labelledby="use">
             <h3 id="use">How We Use Information</h3>
             <p>Data is used to process bookings, send confirmations, respond to enquiries and personalize recommendations. With your consent we may send occasional marketing messages.</p>
           </article>
 
-          <article class="policy-card" role="listitem" aria-labelledby="cookies">
+          <article class="policy-card about-card" role="listitem" aria-labelledby="cookies">
             <h3 id="cookies">Cookies & Tracking</h3>
             <p>We use cookies to improve site function, remember preferences and measure performance. You can manage cookie settings via your browser.</p>
           </article>
 
-          <article class="policy-card" role="listitem" aria-labelledby="third">
+          <article class="policy-card about-card" role="listitem" aria-labelledby="third">
             <h3 id="third">Third Parties</h3>
             <p>We share information with trusted partners (hotels, transport, payment processors) strictly to fulfil bookings. Partners must follow applicable data protection rules.</p>
           </article>
 
-          <article class="policy-card" role="listitem" aria-labelledby="security">
+          <article class="policy-card about-card" role="listitem" aria-labelledby="security">
             <h3 id="security">Data Security</h3>
             <p>We apply technical and organisational measures to protect personal data. While we work to secure information, no system is completely risk-free.</p>
           </article>
         </div>
 
-        <div class="privacy-contact">
-          <div class="contact-left">
-            <strong>Need help?</strong> &nbsp;
-            <span class="muted">Reach our support team at</span> <a href="mailto:nneev223@gmail.com">nneev223@gmail.com</a>
+        <div class="privacy-contact" style="display:flex;justify-content:space-between;align-items:center;gap:1rem;margin-top:1rem;flex-wrap:wrap">
+          <div class="contact-left" style="font-size:.95rem">
+            <strong>Need help?</strong>
+            <span class="muted" style="margin-left:.5rem;color:var(--muted)">Reach our support team at</span>
+            <a href="mailto:nneev223@gmail.com" style="margin-left:.35rem">nneev223@gmail.com</a>
           </div>
-          <div class="contact-actions">
+          <div class="contact-actions" style="display:flex;gap:.6rem">
             <a class="btn btn-secondary" href="contact.html">Contact Support</a>
             <a class="btn btn-ghost" href="privacy.html">View Full Policy</a>
           </div>
         </div>
 
-        <p class="last-updated">Last updated: September 17, 2025</p>
+        <p class="last-updated" style="margin-top:1rem;color:var(--muted)">Last updated: September 17, 2025</p>
       </div>
     </section>
   </main>

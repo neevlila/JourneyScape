@@ -16,15 +16,15 @@
         <span class="brand-name">JourneyScape</span>
       </a>
 
-      <input id="nav-toggle" type="checkbox" class="nav-toggle" aria-hidden="true" />
-      <label for="nav-toggle" class="nav-toggle-label" aria-hidden="true" aria-label="Open navigation">
+      <input id="nav-toggle-dests" type="checkbox" class="nav-toggle" aria-hidden="true" />
+      <label for="nav-toggle-dests" class="nav-toggle-label" aria-hidden="true" aria-label="Open navigation">
         <span class="hamburger" aria-hidden="true"></span>
       </label>
 
-      <nav id="main-nav" class="site-nav" role="navigation" aria-label="Main navigation">
+      <nav class="site-nav" role="navigation" aria-label="Main navigation">
         <ul>
-          <li><a href="index.html" class="nav-link" aria-current="page">Home</a></li>
-          <li><a href="destinations.html" class="nav-link">Destinations</a></li>
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="destinations.html" class="nav-link" aria-current="page">Destinations</a></li>
           <li><a href="about.html" class="nav-link">About</a></li>
           <li><a href="contact.html" class="nav-link">Contact</a></li>
           <li><a href="services.html" class="nav-link">Services</a></li>
@@ -32,34 +32,21 @@
       </nav>
     </div>
   </header>
+
   <main>
-    <!-- Hero with parallax background (background-attachment: fixed) -->
-    <section class="hero" role="region" aria-label="Hero">
+    <section class="hero small-hero no-bg" aria-label="Destinations hero">
       <div class="hero-overlay">
         <div class="container hero-content reveal">
-          <img src="assets/logo.png" height="130" class="hero-img" alt="JourneyScape emblem" />
-          <h1 class="hero-title">JourneyScape</h1>
-          <p class="hero-sub">Explore. Dream. Discover. Personalized journeys crafted with care.</p>
-          <div class="hero-ctas">
-            <a class="btn btn-primary" href="contact.html">Plan Your Journey</a>
-            <a class="btn btn-ghost" href="services.html">Our Promise</a>
-          </div>
+          <h1 class="hero-title">All Destinations</h1>
+          <p class="hero-sub">Explore our full collection of handpicked destinations — from coastlines to cities, mountains to remote wilderness.</p>
         </div>
       </div>
     </section>
 
-    <!-- Intro -->
-    <section class="intro container reveal" aria-label="Introductory message">
-      <h2>Welcome to JourneyScape</h2>
-      <p class="lead">We design tailor-made travel experiences that connect you with local culture, nature and unforgettable moments. Start with inspiration — we'll handle the details.</p>
-    </section>
+    <section class="featured container reveal" aria-label="All destinations grid">
+      <p class="section-lead">Browse detailed guides and itineraries — click Learn More to view full trip suggestions and practical info for each place.</p>
 
-    <!-- Featured Destinations (grid) -->
-    <section id="destinations" class="featured container reveal" aria-label="Featured destinations">
-      <h2 class="section-title">Featured Destinations</h2>
-      <p class="section-lead">Handpicked places, each with unique character — click Learn More to explore itineraries and highlights.</p>
-
-      <div class="dest-grid">
+      <div class="dest-grid" style="margin-top:1rem;">
         <article class="dest-card">
           <img src="assets/dest1.jpg" alt="Azure Coast cliffs" class="dest-img" />
           <div class="dest-body">
@@ -113,45 +100,43 @@
             <a class="btn btn-secondary" href="destinations/lagoon-islands.html">Learn More</a>
           </div>
         </article>
-      </div>
 
-      <div style="text-align:center;margin-top:1.25rem">
-        <a class="btn btn-primary" href="destinations.html">View All Destinations</a>
-      </div>
-    </section>
+        <!-- additional destinations -->
+        <article class="dest-card">
+          <img src="assets/dest7.jpg" alt="Snowy Peaks alpine range" class="dest-img" />
+          <div class="dest-body">
+            <h3>Snowy Peaks</h3>
+            <p>Powdered alpine slopes, crisp mountain air and cozy lodges — perfect for winter sports and tranquil retreats.</p>
+            <a class="btn btn-secondary" href="destinations/snowy-peaks.html">Learn More</a>
+          </div>
+        </article>
 
-    <!-- Testimonials & Stats (kept concise) -->
-    <section class="stats container reveal" aria-label="Why choose us stats">
-      <ul class="stats-list">
-        <li><strong>10k+</strong><span>Happy travelers</span></li>
-        <li><strong>120+</strong><span>Destinations</span></li>
-        <li><strong>4.8</strong><span>Average rating</span></li>
-      </ul>
-    </section>
+        <article class="dest-card">
+          <img src="assets/dest8.jpg" alt="Tropical Bay palm-fringed beach" class="dest-img" />
+          <div class="dest-body">
+            <h3>Tropical Bay</h3>
+            <p>Palm-fringed beaches, calm turquoise waters and vibrant coral reefs — ideal for snorkelers and sun-seekers.</p>
+            <a class="btn btn-secondary" href="destinations/tropical-bay.html">Learn More</a>
+          </div>
+        </article>
 
-    <!-- CTA -->
-    <section class="cta container reveal" aria-label="Call to action">
-      <div class="cta-inner">
-        <div>
-          <h2>Ready to plan your next journey?</h2>
-          <p class="muted">Tell us your dream and we’ll design the trip around it.</p>
-        </div>
-        <a class="btn btn-primary" href="contact.html">Plan Your Journey</a>
-      </div>
-    </section>
+        <article class="dest-card">
+          <img src="assets/dest9.jpg" alt="Ancient Ruins stone columns" class="dest-img" />
+          <div class="dest-body">
+            <h3>Ancient Ruins</h3>
+            <p>Historic sites, stone-strewn avenues and rich archaeological heritage — explore stories that shaped civilizations.</p>
+            <a class="btn btn-secondary" href="destinations/ancient-ruins.html">Learn More</a>
+          </div>
+        </article>
 
-    <!-- Newsletter -->
-    <section class="newsletter container reveal" aria-label="Newsletter">
-      <div class="newsletter-inner">
-        <div>
-          <h3>Stay inspired</h3>
-          <p class="muted">Get curated travel ideas and seasonal offers.</p>
-        </div>
-        <form class="newsletter-form" action="mailto:info@journeyscape.example" method="post" enctype="text/plain">
-          <label for="email" class="sr-only">Email address</label>
-          <input id="email" name="email" type="email" placeholder="Your email address" required />
-          <button class="btn btn-primary" type="submit">Subscribe</button>
-        </form>
+        <article class="dest-card">
+          <img src="assets/dest10.jpg" alt="Northern Lights over dark sky" class="dest-img" />
+          <div class="dest-body">
+            <h3>Northern Lights</h3>
+            <p>Aurora-filled skies, crisp nights and remote viewpoints — chase the lights and experience nature's spectacular show.</p>
+            <a class="btn btn-secondary" href="destinations/northern-lights.html">Learn More</a>
+          </div>
+        </article>
       </div>
     </section>
   </main>
@@ -164,7 +149,7 @@
       </div>
       <nav aria-label="Footer">
         <ul class="footer-links">
-          <li><a href="about.html">About</a></li>
+          <li><a href="index.html">Home</a></li>
           <li><a href="contact.html">Contact</a></li>
           <li><a href="privacy.html">Privacy</a></li>
         </ul>

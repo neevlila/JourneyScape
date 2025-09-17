@@ -3,29 +3,61 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>JourneyScape — Contact</title>
-  <link rel="icon" href="favicon.ico" />
+  <title>JourneyScape</title>
+  <link rel="icon" href="assets/favicon.ico" />
   <link rel="stylesheet" href="css/styles.css" />
-  <!-- Summary: Contact page with accessible form and contact details -->
+  <style>
+    /* Small contact page fixes so form looks clean without changing global CSS */
+    .contact-grid{
+      display:grid;
+      grid-template-columns: 1fr 320px;
+      gap:2rem;
+      align-items:start;
+      margin:1.25rem 0;
+    }
+    @media (max-width:900px){
+      .contact-grid{grid-template-columns:1fr}
+    }
+
+    .contact-form{background:transparent;padding:0}
+    .contact-form h1{margin:0 0 1rem;font-size:2rem}
+    .form-group{display:flex;flex-direction:column;margin-bottom:0.9rem}
+    .form-group label{font-weight:600;margin-bottom:0.35rem;color:#eaf3ff}
+    .form-group input,
+    .form-group select,
+    .form-group textarea{padding:.55rem .7rem;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:inherit;min-width:0}
+    .form-group textarea{min-height:120px;resize:vertical}
+    .fieldset-inline{border:none;padding:0;margin:0 0 .9rem}
+    .fieldset-inline legend{font-weight:600;margin-bottom:.4rem}
+    .fieldset-inline .radios{display:flex;gap:1rem;flex-wrap:wrap}
+    .note{color:var(--muted);margin:0.6rem 0}
+    .contact-details{background:var(--card-bg);padding:1rem;border-radius:12px;border:1px solid rgba(255,255,255,0.02)}
+    .contact-details h2{margin-top:0}
+    .social-list{display:flex;gap:.6rem;padding:0;margin:0;list-style:none}
+    .icon-link{display:inline-block;padding:.45rem;border-radius:8px;background:rgba(255,255,255,0.02);color:var(--muted)}
+    .btn {min-width:160px}
+  </style>
 </head>
 <body>
   <header class="site-header" role="banner">
     <div class="container header-inner">
-      <a href="index.html" class="brand">
-        <img src="assets/logo.png" class="logo" />
+      <a href="index.html" class="brand" aria-label="JourneyScape home">
+        <img src="assets/logo.png" class="logo" alt="JourneyScape logo" />
         <span class="brand-name">JourneyScape</span>
       </a>
 
       <input id="nav-toggle-contact" type="checkbox" class="nav-toggle" aria-label="Open navigation" />
       <label for="nav-toggle-contact" class="nav-toggle-label" aria-hidden="true">
-        <span></span>
+        <span class="hamburger" aria-hidden="true"></span>
       </label>
 
       <nav class="site-nav" role="navigation" aria-label="Main navigation">
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="contact.html" aria-current="page">Contact</a></li>
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="destinations.html" class="nav-link">Destinations</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="contact.html" class="nav-link" aria-current="page">Contact</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
         </ul>
       </nav>
     </div>
@@ -33,42 +65,52 @@
 
   <main>
     <section class="contact container" aria-label="Contact section">
-      <!-- Contact form (non-functional) -->
       <div class="contact-grid">
-        <form class="contact-form" novalidate>
-          <!-- Note: form submission is intentionally non-functional (no action) -->
-          <!-- Labels and inputs with accessibility attributes -->
-          <h1>Get in touch</h1>
 
-          <label for="name">Name <span aria-hidden="true">*</span></label>
-          <input id="name" name="name" type="text" placeholder="Your full name" required />
+        <form class="contact-form" novalidate aria-labelledby="contact-heading">
+          <h1 id="contact-heading">Get in touch</h1>
 
-          <label for="email">Email <span aria-hidden="true">*</span></label>
-          <input id="email" name="email" type="email" placeholder="you@example.com" required />
+          <div class="form-group">
+            <label for="name">Name <span aria-hidden="true">*</span></label>
+            <input id="name" name="name" type="text" placeholder="Your full name" required aria-required="true" />
+          </div>
+
+          <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+            <div style="flex:1" class="form-group">
+              <label for="email">Email <span aria-hidden="true">*</span></label>
+              <input id="email" name="email" type="email" placeholder="you@example.com" required aria-required="true" />
+            </div>
+
+            <div style="width:180px" class="form-group">
+              <label for="country">Country</label>
+              <select id="country" name="country" aria-label="Country">
+                <option value="">Select a country</option>
+                <option>India</option>
+                <option>United States</option>
+                <option>Canada</option>
+                <option>Australia</option>
+                <option>Japan</option>
+              </select>
+            </div>
+          </div>
 
           <fieldset class="fieldset-inline" aria-labelledby="gender-label">
             <legend id="gender-label">Gender</legend>
-            <label><input type="radio" name="gender" value="female" /> Female</label>
-            <label><input type="radio" name="gender" value="male" /> Male</label>
-            <label><input type="radio" name="gender" value="other" /> Other</label>
-            <label><input type="radio" name="gender" value="prefer-not" /> Prefer not to say</label>
+            <div class="radios">
+              <label><input type="radio" name="gender" value="female" /> Female</label>
+              <label><input type="radio" name="gender" value="male" /> Male</label>
+              <label><input type="radio" name="gender" value="other" /> Other</label>
+              <label><input type="radio" name="gender" value="prefer-not" /> Prefer not to say</label>
+            </div>
           </fieldset>
 
-          <label for="country">Country</label>
-          <select id="country" name="country">
-            <option value="">Select a country</option>
-            <option>India</option>
-            <option>United States</option>
-            <option>Canada</option>
-            <option>Australia</option>
-            <option>Japan</option>
-          </select>
-
-          <label for="message">Message</label>
-          <textarea id="message" name="message" rows="6" placeholder="Share your dream destination or what you're looking for in your next adventure!"></textarea>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Share your dream destination or what you're looking for in your next adventure!"></textarea>
+          </div>
 
           <p class="note">This form is for demonstration only; submission is not implemented.</p>
-          <button class="btn btn-secondary" type="submit">Send message</button>
+          <button class="btn btn-primary" type="submit">Send message</button>
         </form>
 
         <aside class="contact-details" aria-label="Contact details">
@@ -76,12 +118,11 @@
           <p>Email: <a href="mailto:nneev223@gmail.com">nneev223@gmail.com</a></p>
           <p>Phone: +91 7778005753</p>
 
-          <div class="social" aria-label="Social media">
-            <p>Follow us</p>
+          <div class="social" aria-label="Social media" style="margin-top:0.8rem">
+            <p style="margin:.4rem 0;color:var(--muted)">Follow us</p>
             <ul class="social-list">
               <li>
-                <!-- Instagram outline icon (stroke uses currentColor) -->
-                <a href="https://www.instagram.com/neev_lila" aria-label="Instagram" class="icon-link">
+                <a href="https://www.instagram.com/neev_lila" aria-label="Instagram" class="icon-link" target="_blank" rel="noopener noreferrer">
                   <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
                     <rect x="3" y="3" width="18" height="18" rx="5"></rect>
                     <circle cx="12" cy="12" r="3.2"></circle>
@@ -91,8 +132,7 @@
               </li>
 
               <li>
-                <!-- LinkedIn outline icon -->
-                <a href="https://www.linkedin.com/in/neev-lila-292b46301" aria-label="LinkedIn" class="icon-link">
+                <a href="https://www.linkedin.com/in/neev-lila-292b46301" aria-label="LinkedIn" class="icon-link" target="_blank" rel="noopener noreferrer">
                   <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
                     <rect x="2" y="2" width="20" height="20" rx="2"></rect>
                     <path d="M7 10v7"></path>
@@ -106,6 +146,7 @@
             </ul>
           </div>
         </aside>
+
       </div>
     </section>
   </main>
@@ -117,6 +158,7 @@
         <ul class="footer-links">
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
+          <li><a href="privacy.html">Privacy</a></li>
         </ul>
       </nav>
     </div>

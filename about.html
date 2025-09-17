@@ -3,72 +3,89 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>JourneyScape — About</title>
-  <link rel="icon" href="favicon.ico" />
+  <title>JourneyScape</title>
+  <link rel="icon" href="/assets/favicon.ico" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
   <header class="site-header" role="banner">
     <div class="container header-inner">
-      <a href="index.html" class="brand">
-        <img src="assets/logo.png" class="logo" />
+      <a href="index.html" class="brand" aria-label="JourneyScape home">
+        <img src="assets/logo.png" class="logo" alt="JourneyScape logo" />
         <span class="brand-name">JourneyScape</span>
       </a>
 
-      <input id="nav-toggle-about" type="checkbox" class="nav-toggle" aria-label="Open navigation" />
-      <label for="nav-toggle-about" class="nav-toggle-label" aria-hidden="true">
-        <span></span>
+      <input id="nav-toggle-about" type="checkbox" class="nav-toggle" aria-hidden="true" />
+      <label for="nav-toggle-about" class="nav-toggle-label" aria-hidden="true" aria-label="Open navigation">
+        <span class="hamburger" aria-hidden="true"></span>
       </label>
 
       <nav class="site-nav" role="navigation" aria-label="Main navigation">
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html" aria-current="page">About</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="destinations.html" class="nav-link">Destinations</a></li>
+          <li><a href="about.html" class="nav-link" aria-current="page">About</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
   <main>
-    <section class="about-hero" role="region" aria-label="About hero">
-      <div class="about-overlay container">
-        <h1>About JourneyScape</h1>
-        <p class="lead">We connect travelers with memorable experiences crafted by local experts.</p>
+    <section class="about-hero hero small-hero" aria-label="About hero">
+      <div class="hero-overlay">
+        <div class="container hero-content reveal">
+          <h1 class="hero-title">About JourneyScape</h1>
+          <p class="hero-sub">We connect travelers with meaningful journeys crafted by local experts — responsible, memorable and tailored to you.</p>
+        </div>
       </div>
     </section>
 
-    <section class="about-content container" aria-label="About content">
-      <div class="intro">
-        <p>Connecting people with meaningful journeys is our passion. We believe travel should be more than just a destination; genuine, culturally rich experiences that honor local communities and environment are important.</p>
+    <section class="about-content container reveal" aria-label="About content" style="margin-top:1.25rem;">
+      <div class="intro" style="text-align:center;margin-bottom:1rem;">
+        <p class="lead">Connecting people with meaningful journeys is our passion. We design trips that are culturally rich, environmentally conscious and deeply personal.</p>
       </div>
 
-      <div class="grid-about">
-        <article class="about-card" aria-labelledby="mission">
+      <div class="promise-grid" style="gap:1rem;">
+        <article class="about-card promise reveal" aria-labelledby="mission" style="background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); padding:1rem;">
+          <div class="icon" style="font-size:1.6rem">🎯</div>
           <h2 id="mission">Mission</h2>
-          <p>To create travel experiences that inspire, educate and support the places we visit.</p>
+          <p>To craft journeys that create lasting memories while supporting local communities and preserving destinations for generations to come.</p>
         </article>
 
-        <article class="about-card" aria-labelledby="vision">
+        <article class="about-card promise reveal" aria-labelledby="vision" style="background:#071026;padding:1rem;">
+          <div class="icon" style="font-size:1.6rem">🔭</div>
           <h2 id="vision">Vision</h2>
-          <p>To be a trusted travel partner that fosters meaningful connections and sustainable tourism.</p>
+          <p>To be a trusted partner for curious travelers seeking authentic experiences — blending thoughtful design with responsible travel practice.</p>
         </article>
 
-        <article class="about-card" aria-labelledby="why">
+        <article class="about-card promise reveal" aria-labelledby="why" style="background: linear-gradient(90deg, rgba(108,92,231,0.06), rgba(0,180,216,0.03)); padding:1rem;">
+          <div class="icon" style="font-size:1.6rem">💡</div>
           <h2 id="why">Why Choose Us</h2>
-          <p>Local guides, thoughtful itineraries, and attention to detail—every trip is tailored to your interests.</p>
+          <p>Personalized itineraries, vetted local partners, and 24/7 support ensure your journey is seamless, safe and full of discovery.</p>
         </article>
+      </div>
+
+      <div style="margin-top:1.25rem;display:flex;gap:1rem;flex-wrap:wrap;">
+        <a class="btn btn-primary" href="contact.html">Work with Us</a>
+        <a class="btn btn-ghost" href="services.html">Explore Services</a>
       </div>
     </section>
   </main>
 
   <footer class="site-footer" role="contentinfo">
     <div class="container footer-inner">
-      <p>&copy; 2025 TraJourneyScape by Neev Lila. All rights reserved.</p>
+      <div class="footer-left">
+        <p>&copy; 2025 JourneyScape. All rights reserved.</p>
+        <p class="muted">Email: <a href="mailto:nneev223@gmail.com">nneev223@gmail.com</a> • Phone: +91 7778005753</p>
+      </div>
       <nav aria-label="Footer">
         <ul class="footer-links">
           <li><a href="index.html">Home</a></li>
           <li><a href="contact.html">Contact</a></li>
+          <li><a href="privacy.html">Privacy</a></li>
         </ul>
       </nav>
     </div>
